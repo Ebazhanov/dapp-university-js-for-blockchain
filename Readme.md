@@ -31,15 +31,15 @@ Code: https://github.com/dappuniversity/web...
 -  If you are getting an " web3 module not found" or similar error, 
    try running `npm install --production windows-build-tools`, 
    then `npm install web3`, and finally, `npm audit fix` 
-
--  `$ node`
+## Web3.js #1 
+  $ node
   > var Web3 = require('web3')
   undefined
   
   > Web3
-  // a set of web3 methods will appear
+  -// a set of web3 methods will appear
   
-  // get an API key from Infura
+  -// get an API key from Infura
   > var url = 'https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce'
   undefined
   
@@ -47,7 +47,7 @@ Code: https://github.com/dappuniversity/web...
   undefined
  
   >web3
-  //a set of web3 methods will appear
+  // a set of web3 methods will appear
  
   //use Etherscan.io to find an account 
   > var address = '0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8'  
@@ -62,8 +62,24 @@ Code: https://github.com/dappuniversity/web...
   > web3.utils.fromWei(balance,'ether')
   '1985015.119547778877280409'
   
-  //create an account
+  //create an account. This is not a SECURE method
+   web3.eth.accounts.create()
+
+## Web3.js #2
+   $ node
+   > var Web3 = require('web3')
+   undefined
+   var web3 = new Web3('https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce')
+   web3
+   
+   //copy ABI from any coin on etherscan.io
+   // e.g. from https://etherscan.io/address/0xd26114cd6EE289AccF82350c8d8487fedB8A0C07#code
+   var abi =  //paste ABI here ⚠️
+ 
+   // copy contract`s address
+   > var address = '0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
 
 FYI I ended here [https://youtu.be/itUrxH-rksc?t=10037](https://youtu.be/itUrxH-rksc?t=10037)
+    I ended here:
 
 
