@@ -24,11 +24,27 @@ Code: https://github.com/dappuniversity/web...
 - [https://infura.io/](https://infura.io/)
 
 ## Next step:
-- `npm install web3`
+-  Check node `node -v` and web3 version `npm ls web3`
+-  Initialize the project `npm init` 
+-  Install modules `npm install`
+-  Install web3 `npm install web3`
+-  If you are getting an " web3 module not found" or similar error, 
+   try running `npm install --production windows-build-tools`, 
+   then `npm install web3`, and finally, `npm audit fix` 
+
 -  `$ node`
   > var Web3 = require('web3')
   undefined
+  
+  > Web3
+  (a set of web3 methods will appear)
+  
+  > var url = 'https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce'
+  undefined
+  > var web3 = new Web3(url)
+  undefined
   > web3
+  (a set of web3 methods will appear)
 
 FYI I ended here [https://youtu.be/itUrxH-rksc?t=10037](https://youtu.be/itUrxH-rksc?t=10037)
 
