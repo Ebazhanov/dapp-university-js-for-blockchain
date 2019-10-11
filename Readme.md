@@ -86,8 +86,14 @@ Code: https://github.com/dappuniversity/web...
    contract.methods.symbol().call((err, result) => {console.log(result) })
    contract.methods.totalSupply().call((err, result) => {console.log(result) })
    contract.methods.mintingFinished().call((err, result) => {console.log(result) })
+   
+   //find an address of token holder from etherscan.io
+   var accountAddress ='0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
+   contract.methods.balanceOf(accountAddress).call((err, result) => {console.log(result) })
+   
+   
 
 FYI I ended here [https://youtu.be/itUrxH-rksc?t=10037](https://youtu.be/itUrxH-rksc?t=10037)
-    I ended here:
+    I ended here: https://youtu.be/itUrxH-rksc?t=12012
 
 
