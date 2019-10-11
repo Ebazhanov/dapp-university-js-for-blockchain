@@ -37,14 +37,32 @@ Code: https://github.com/dappuniversity/web...
   undefined
   
   > Web3
-  (a set of web3 methods will appear)
+  // a set of web3 methods will appear
   
+  // get an API key from Infura
   > var url = 'https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce'
   undefined
-  > var web3 = new Web3(url)
+  
+  >var web3 = new Web3(url)
   undefined
-  > web3
-  (a set of web3 methods will appear)
+ 
+  >web3
+  //a set of web3 methods will appear
+ 
+  //use Etherscan.io to find an account 
+  > var address = '0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8'  
+  undefined
+  
+  //get account balance
+  > web3.eth.getBalance(address, (err, bal) => { balance = bal })
+  > balance
+  '1985015119547778877280409'
+  
+  //convert it to ETH
+  > web3.utils.fromWei(balance,'ether')
+  '1985015.119547778877280409'
+  
+  //create an account
 
 FYI I ended here [https://youtu.be/itUrxH-rksc?t=10037](https://youtu.be/itUrxH-rksc?t=10037)
 
