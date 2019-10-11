@@ -77,7 +77,15 @@ Code: https://github.com/dappuniversity/web...
    var abi =  //paste ABI here ⚠️
  
    // copy contract`s address
-   > var address = '0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
+   > var contractAddress = '0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
+   > contractAddress
+   var contract = new web3/eth.contract(abi, contractAddress)
+   > contract
+   
+   contract.methods.name().call((err, result) => {console.log(result) })
+   contract.methods.symbol().call((err, result) => {console.log(result) })
+   contract.methods.totalSupply().call((err, result) => {console.log(result) })
+   contract.methods.mintingFinished().call((err, result) => {console.log(result) })
 
 FYI I ended here [https://youtu.be/itUrxH-rksc?t=10037](https://youtu.be/itUrxH-rksc?t=10037)
     I ended here:
