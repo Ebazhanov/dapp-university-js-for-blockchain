@@ -37,9 +37,9 @@ Code: https://github.com/dappuniversity/web...
   undefined
   
   > Web3
-  -// a set of web3 methods will appear
+  // a set of web3 methods will appear
   
-  -// get an API key from Infura
+  // get an API key from Infura
   > var url = 'https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce'
   undefined
   
