@@ -1,18 +1,22 @@
 
+<img src="https://monosnap.com/image/UZPsR5l6SbSO78BJUb8CLs0zZsU4Zl"/>
+
 Dapp University
 ---------------
+This example will open your eyes on the topic 
+of how to BECOME A HIGHLY PAID BLOCKCHAIN DEVELOPER
 
-- [Javascript for Blockchain](https://www.youtube.com/watch?v=itUrxH-rksc&feature=youtu.be)
+Youtube: ["Javascript for Blockchain"](https://www.youtube.com/watch?v=itUrxH-rksc&feature=youtu.be)
+* [02:39:57](https://www.youtube.com/watch?v=itUrxH-rksc&t=9597s) Web3.js #1
+* [03:00:22](https://www.youtube.com/watch?v=itUrxH-rksc&t=10822s) Web3.js #2
+* [03:20:13](https://www.youtube.com/watch?v=itUrxH-rksc&t=12013s) Web3.js #3
+* [03:32:45](https://www.youtube.com/watch?v=itUrxH-rksc&t=12765s) Web3.js #4
+* [03:54:09](https://www.youtube.com/watch?v=itUrxH-rksc&t=14049s) Web3.js #5
+* [04:16:20](https://www.youtube.com/watch?v=itUrxH-rksc&t=15380s) Web3.js #6
+* [04:34:47](https://www.youtube.com/watch?v=itUrxH-rksc&t=16487s) Web3.js #7
+* [04:49:22](https://www.youtube.com/watch?v=itUrxH-rksc&t=17362s) Web3.js #8
 
 Code: https://github.com/dappuniversity/web...
-* [02:39:57] Web3.js #1
-* [03:00:22] Web3.js #2
-* [03:20:13] Web3.js #3
-* [03:32:45] Web3.js #4
-* [03:54:09] Web3.js #5
-* [04:16:20] Web3.js #6
-* [04:34:47] Web3.js #7
-* [04:49:22] Web3.js #8
 
 
 ## Let's get started: 
@@ -24,48 +28,17 @@ Code: https://github.com/dappuniversity/web...
 - [https://infura.io/](https://infura.io/)
 
 ## Next step:
--  Check node `node -v` and web3 version `npm ls web3`
--  Initialize the project `npm init` 
--  Install modules `npm install`
--  Install web3 `npm install web3`
+-  Check node `$ node -v` and web3 version `$ npm ls web3`
+-  Initialize the project `$ npm init` 
+-  Install modules `$ npm install`
+-  Install web3 `$ npm install web3`
 -  If you are getting an " web3 module not found" or similar error, 
-   try running `npm install --production windows-build-tools`, 
-   then `npm install web3`, and finally, `npm audit fix` 
-## Web3.js #1 
-  $ node
-  > var Web3 = require('web3')
-  undefined
-  
-  > Web3
-  // a set of web3 methods will appear
-  
-  // get an API key from Infura
-  > var url = 'https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce'
-  undefined
-  
-  >var web3 = new Web3(url)
-  undefined
- 
-  >web3
-  // a set of web3 methods will appear
- 
-  //use Etherscan.io to find an account 
-  > var address = '0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8'  
-  undefined
-  
-  //get account balance
-  > web3.eth.getBalance(address, (err, bal) => { balance = bal })
-  > balance
-  '1985015119547778877280409'
-  
-  //convert it to ETH
-  > web3.utils.fromWei(balance,'ether')
-  '1985015.119547778877280409'
-  
-  //create an account. This is not a SECURE method
-   web3.eth.accounts.create()
+   > try running `$ npm install --production windows-build-tools`, 
+   > then `$ npm install web3`, and finally, `$ npm audit fix`
+                                                                         
 
-## Web3.js #2
+## Usage
+### Web3.js #2
    $ node
    > var Web3 = require('web3')
    undefined
