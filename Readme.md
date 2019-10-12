@@ -47,9 +47,11 @@ Code: https://github.com/dappuniversity/web...
    
    // copy ABI from any coin on etherscan.io
    // e.g. from https://etherscan.io/address/0xd26114cd6EE289AccF82350c8d8487fedB8A0C07#code
+   
    var abi =  //paste ABI here ⚠️
  
    // copy contract`s address
+   
    > var contractAddress = '0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
    > contractAddress
    var contract = new web3/eth.contract(abi, contractAddress)
@@ -61,6 +63,7 @@ Code: https://github.com/dappuniversity/web...
    contract.methods.mintingFinished().call((err, result) => {console.log(result) })
    
    // find an address of token holder from etherscan.io
+   
    var accountAddress ='0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
    contract.methods.balanceOf(accountAddress).call((err, result) => {console.log(result) })
    
