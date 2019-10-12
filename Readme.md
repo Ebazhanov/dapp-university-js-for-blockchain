@@ -45,7 +45,7 @@ Code: https://github.com/dappuniversity/web...
    var web3 = new Web3('https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce')
    web3
    
-   //copy ABI from any coin on etherscan.io
+   // copy ABI from any coin on etherscan.io
    // e.g. from https://etherscan.io/address/0xd26114cd6EE289AccF82350c8d8487fedB8A0C07#code
    var abi =  //paste ABI here ⚠️
  
@@ -60,7 +60,7 @@ Code: https://github.com/dappuniversity/web...
    contract.methods.totalSupply().call((err, result) => {console.log(result) })
    contract.methods.mintingFinished().call((err, result) => {console.log(result) })
    
-   //find an address of token holder from etherscan.io
+   // find an address of token holder from etherscan.io
    var accountAddress ='0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
    contract.methods.balanceOf(accountAddress).call((err, result) => {console.log(result) })
    
