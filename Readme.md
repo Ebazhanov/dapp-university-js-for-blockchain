@@ -66,10 +66,15 @@ Code: https://github.com/dappuniversity/web...
    
    var accountAddress ='0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
    contract.methods.balanceOf(accountAddress).call((err, result) => {console.log(result) })
+
+### Web3.js #4  
+   ropsten.infura.io/v3/ea9dd948eceb46c888515813a41924ce
+   `npm install ethereumjs-tx`
+   
    
    
 
 FYI I ended here [https://youtu.be/itUrxH-rksc?t=10037](https://youtu.be/itUrxH-rksc?t=10037)
-    I ended here: https://youtu.be/itUrxH-rksc?t=12012
+    I ended here: 
 
 
