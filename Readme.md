@@ -70,7 +70,7 @@ Code: https://github.com/dappuniversity/web...
 ### Web3.js #4  
    ropsten.infura.io/v3/ea9dd948eceb46c888515813a41924ce
    `npm install ethereumjs-tx`
-   
+   `node app.js`
    
    
 
