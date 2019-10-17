@@ -1,5 +1,127 @@
+ // #8
+
+/*
+const Web3 = require('web3')
+const web3 = new Web3('https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce')
+
+// ******************Please use 2 lines above with  one `option` at the same time ***********
+
+// average gas price in wei for the last few blocks
+// option 1
+  web3.eth.getGasPrice().then((result) => {
+  console.log(web3.utils.fromWei(result, 'ether'))
+  })
+
+//access to hashing function
+//option 2
+console.log(web3.utils.sha3('Sergei'))
+// keccack256 can be used instead of sha3
+
+//underscore.js library example
+const _ = web3.utils._
+
+_.each({key1: 'value', key2: 'value2'}, (value,key)  => {
+  console.log(key)
+})
+*/
+
+
+
+// #7
+// we are using web3 library
+
+const Web3 = require('web3')
+
+// new connection through infura, instance of web3
+const web3 = new Web3('https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce')
+
+// ******************Please use 2 lines above with  one `option` at the same time ***********
+
+
+
+
+
+ //option 1 -get block number
+
+ web3.eth.getBlockNumber().then(console.log)
+ 
+ // option 2-get latest block
+web3.eth.getBlock('latest').then(console.log) 
+
+// option 3-get hash
+
+web3.eth.getBlock('latest').then((block) => {
+console.log(block.hash) } )
+
+//option 4- get latest block hash /block number
+web3.eth.getBlock('latest').then((block) => {
+   blockHash: block.hash,
+   blockNumber : block.number
+ })
+ 
+
+
+// option 5 - specify block OR hash
+web3.eth.getBlock(5855085).then((block) => {
+ console.log({
+ blockHash: block.hash,
+ blockNumber : block.number
+  })
+  })
+
+
+// option 6 - get 10 latest blocks
+web3.eth.getBlockNumber().then((latest) => {
+
+web3.eth.getBlock(latest- i).then((block) => {
+console.log(block.number)
+ })
+ }
+
+
+//option 7 -amount of transaction in the block
+ 
+  web3.eth.getBlockNumber().then(async (block) => {
+  const txCount = await web3.eth.getBlockTransactionCount(block);
+  console.log(txCount);
+  });
+
+
+
+
+
+ /*// #6
+// we are using web3 library
+const Web3 = require('web3')
+
+// new connection through infura, instance of web3
+const web3 = new Web3('https://mainnet.infura.io/v3/ea9dd948eceb46c888515813a41924ce')
+
+// OMG token ABI from https://etherscan.io/address/0xd26114cd6EE289AccF82350c8d8487fedB8A0C07#code
+const abi = [{"constant":true,"inputs":[],"name":"mintingFinished","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"unpause","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_amount","type":"uint256"}],"name":"mint","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"paused","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"finishMinting","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"pause","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_amount","type":"uint256"},{"name":"_releaseTime","type":"uint256"}],"name":"mintTimelocked","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Mint","type":"event"},{"anonymous":false,"inputs":[],"name":"MintFinished","type":"event"},{"anonymous":false,"inputs":[],"name":"Pause","type":"event"},{"anonymous":false,"inputs":[],"name":"Unpause","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"}]
+
+
+// OMG  token contract address from  https://etherscan.io/address/0xd26114cd6EE289AccF82350c8d8487fedB8A0C07
+const address = '0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
+
+//connection to a smart contract
+const contract =  new web3.eth.Contract(abi, address)
+
+
+
+contract.getPastEvents(
+    'Transfer', 
+    {
+    fromBlock: 5858000, 
+    toBlock: 'latest'
+    },
+    (err, events) => {console.log(events.length) }
+)
+
+
+
 const Tx = require("ethereumjs-tx").Transaction
-PRIVATE_KEY_1 ='99E497A1987B1176467978D60050D45C98F9E14B3A965ADDDB3227820AEB07CF'
+//???PRIVATE_KEY_1 ='99E497A1987B1176467978D60050D45C98F9E14B3A965ADDDB3227820AEB07CF'
 //const tx = new Tx(txObject, {chain:'ropsten', hardfork: 'petersburg'})
 const Web3 = require('web3')
 const web3 = new Web3('https://ropsten.infura.io/v3/ea9dd948eceb46c888515813a41924ce')
@@ -29,4 +151,56 @@ web3.eth.getTransactionCount(account1, (err, txCount) => {
     // Use this txHash to find the contract on Etherscan!
   })
 })
+*/
 
+/* //#5
+
+const Web3 = require('web3')
+const web3 = new Web3('https://ropsten.infura.io/YOUR_INFURA_API_KEY')
+
+const account1 = '' // Your account address 1
+const account2 = '' // Your account address 2
+
+const privateKey1 = Buffer.from('YOUR_PRIVATE_KEY_1', 'hex')
+const privateKey2 = Buffer.from('YOUR_PRIVATE_KEY_2', 'hex')
+
+// Read the deployed contract - get the addresss from Etherscan
+const contractAddress = '0xd03696B53924972b9903eB17Ac5033928Be7D3Bc'
+const contractABI = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"standard","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"},{"name":"","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}]
+
+const contract = new web3.eth.Contract(abi, contractAddress)
+
+// Transfer some tokens
+web3.eth.getTransactionCount(account1, (err, txCount) => {
+
+  const txObject = {
+    nonce:    web3.utils.toHex(txCount),
+    gasLimit: web3.utils.toHex(800000), // Raise the gas limit to a much higher amount
+    gasPrice: web3.utils.toHex(web3.utils.toWei('10', 'gwei')),
+    to: contractAddress,
+    data: contract.methods.transfer(account2, 1000).encodeABI()
+  }
+
+  const tx = new Tx(txObject)
+  tx.sign(privateKey1)
+
+  const serializedTx = tx.serialize()
+  const raw = '0x' + serializedTx.toString('hex')
+
+  web3.eth.sendSignedTransaction(raw, (err, txHash) => {
+    console.log('err:', err, 'txHash:', txHash)
+    // Use this txHash to find the contract on Etherscan!
+  })
+})
+
+// Check Token balance for account1
+contract.methods.balanceOf(account1).call((err, balance) => {
+  console.log({ err, balance })
+})
+
+// Check Token balance for account2
+contract.methods.balanceOf(account2).call((err, balance) => {
+  console.log({ err, balance })
+})
+
+*/
