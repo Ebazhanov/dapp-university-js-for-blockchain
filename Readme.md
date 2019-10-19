@@ -74,7 +74,4 @@ Code: https://github.com/dappuniversity/web...
    
    
 
-Zhenya  ended here [https://youtu.be/itUrxH-rksc?t=10037](https://youtu.be/itUrxH-rksc?t=10037)
-Sergei  ended here: https://youtu.be/itUrxH-rksc?t=13669
-
 
